@@ -1,394 +1,115 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Condicionamento Físico para o Jiu-Jítsu | Método</title>
+<meta charset="UTF-8">
+<title>Combat Conditioning</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<style>
+body{
+margin:0;
+font-family:Arial, sans-serif;
+background:#000;
+color:white;
+}
 
-  <style>
-    :root{
-      --gold:#e6c36a;
-      --gold2:#cfa14a;
-      --text:#f2f2f2;
-      --muted:#cfcfcf;
-      --card:rgba(0,0,0,.62);
-      --card2:rgba(10,10,10,.72);
-      --line:rgba(255,255,255,.10);
-      --shadow:0 18px 55px rgba(0,0,0,.55);
-    }
+header{
+height:100vh;
+background:url("IMG_0184.webp") center/cover no-repeat;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+}
 
-    *{ margin:0; padding:0; box-sizing:border-box; font-family:'Montserrat',sans-serif; scroll-behavior:smooth; }
-    body{
-      color:var(--text);
-      background:
-        linear-gradient(180deg, rgba(0,0,0,.88), rgba(0,0,0,.88)),
-        url("IMG_0184.webp") center/cover no-repeat fixed;
-      min-height:100vh;
-    }
+header h1{
+background:rgba(0,0,0,0.6);
+padding:20px;
+border-radius:12px;
+}
 
-    header{
-      padding:110px 18px 42px;
-      text-align:center;
-      max-width:1100px;
-      margin:0 auto;
-    }
-    .badge{
-      display:inline-block;
-      padding:10px 14px;
-      border:1px solid var(--line);
-      border-radius:999px;
-      background:rgba(0,0,0,.35);
-      color:var(--muted);
-      font-weight:600;
-      letter-spacing:.3px;
-    }
-    header h1{
-      margin-top:18px;
-      font-size:clamp(2.1rem, 4vw, 3.3rem);
-      font-weight:800;
-      letter-spacing:1.5px;
-      text-transform:uppercase;
-      color:var(--gold);
-      line-height:1.1;
-    }
-    header p{
-      margin:18px auto 0;
-      max-width:880px;
-      font-size:1.08rem;
-      color:var(--muted);
-      line-height:1.85;
-    }
+section{
+padding:50px 20px;
+text-align:center;
+}
 
-    .cta-row{
-      margin-top:26px;
-      display:flex;
-      gap:12px;
-      justify-content:center;
-      flex-wrap:wrap;
-    }
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      padding:14px 22px;
-      border-radius:999px;
-      text-decoration:none;
-      font-weight:800;
-      letter-spacing:.2px;
-      transition:.22s ease;
-      border:1px solid transparent;
-      box-shadow:var(--shadow);
-      cursor:pointer;
-      user-select:none;
-    }
-    .btn-primary{
-      background:linear-gradient(135deg, var(--gold), var(--gold2));
-      color:#0a0a0a;
-    }
-    .btn-primary:hover{ transform:translateY(-2px); filter:saturate(1.05); }
-    .btn-ghost{
-      background:rgba(0,0,0,.35);
-      border:1px solid var(--line);
-      color:var(--text);
-    }
-    .btn-ghost:hover{ transform:translateY(-2px); border-color:rgba(230,195,106,.35); }
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:15px;
+}
 
-    nav{
-      position:sticky;
-      top:0;
-      z-index:999;
-      background:rgba(0,0,0,.78);
-      backdrop-filter: blur(10px);
-      border-top:1px solid var(--line);
-      border-bottom:1px solid var(--line);
-    }
-    .nav-inner{
-      max-width:1100px;
-      margin:0 auto;
-      padding:12px 14px;
-      display:flex;
-      gap:10px;
-      justify-content:center;
-      flex-wrap:wrap;
-    }
-    nav a{
-      text-decoration:none;
-      color:var(--gold);
-      border:1px solid rgba(230,195,106,.35);
-      padding:8px 14px;
-      border-radius:999px;
-      font-weight:700;
-      font-size:.95rem;
-      transition:.2s ease;
-    }
-    nav a:hover{ background:rgba(230,195,106,.18); }
+.gallery img{
+width:100%;
+border-radius:12px;
+}
 
-    section{
-      max-width:1100px;
-      margin:38px auto;
-      padding:32px 18px;
-    }
+.card{
+background:#111;
+padding:20px;
+border-radius:12px;
+margin:15px auto;
+max-width:600px;
+}
 
-    .panel{
-      background:var(--card);
-      border:1px solid var(--line);
-      border-radius:18px;
-      padding:26px;
-      box-shadow:var(--shadow);
-    }
-
-    h2{
-      color:var(--gold);
-      font-size:1.8rem;
-      margin-bottom:12px;
-      letter-spacing:.2px;
-    }
-    .lead{
-      color:var(--muted);
-      line-height:1.9;
-      font-size:1.05rem;
-      margin-bottom:14px;
-    }
-    .divider{
-      height:1px;
-      background:var(--line);
-      margin:18px 0;
-    }
-
-    details{
-      background:var(--card2);
-      border:1px solid var(--line);
-      border-radius:14px;
-      padding:16px 16px;
-      margin:12px 0;
-      overflow:hidden;
-    }
-    summary{
-      cursor:pointer;
-      list-style:none;
-      font-weight:800;
-      color:var(--gold);
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:10px;
-      user-select:none;
-    }
-    summary::-webkit-details-marker{ display:none; }
-    .chev{
-      width:28px; height:28px;
-      display:grid; place-items:center;
-      border:1px solid rgba(230,195,106,.35);
-      border-radius:999px;
-      color:var(--gold);
-      font-weight:900;
-      transition:.2s ease;
-    }
-    details[open] .chev{ transform:rotate(45deg); }
-
-    ul{
-      margin:12px 0 0 18px;
-      color:var(--muted);
-      line-height:1.95;
-      font-size:1.03rem;
-    }
-
-    .grid{
-      margin-top:16px;
-      display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
-      gap:12px;
-    }
-    .card{
-      background:var(--card2);
-      border:1px solid var(--line);
-      border-radius:14px;
-      padding:16px;
-    }
-    .card strong{ color:var(--gold); display:block; margin-bottom:6px; }
-    .card span{ color:var(--muted); }
-
-    .price{
-      display:flex;
-      flex-wrap:wrap;
-      gap:12px;
-      align-items:center;
-      justify-content:space-between;
-      margin-top:16px;
-      padding:16px;
-      border-radius:14px;
-      background:rgba(0,0,0,.35);
-      border:1px solid rgba(230,195,106,.28);
-    }
-    .price .value{
-      font-size:1.45rem;
-      font-weight:900;
-      color:#00ff99;
-      letter-spacing:.3px;
-    }
-    .small{
-      color:var(--muted);
-      font-size:.98rem;
-      line-height:1.8;
-    }
-
-    footer{
-      max-width:1100px;
-      margin:40px auto 0;
-      padding:26px 18px 45px;
-      text-align:center;
-      color:rgba(255,255,255,.55);
-      font-size:.95rem;
-    }
-
-    @media (max-width:520px){
-      .price{ justify-content:flex-start; }
-    }
-  </style>
+canvas{
+max-width:100%;
+}
+</style>
 </head>
 
 <body>
 
-  <header>
-    <div class="badge">Criado por atleta • Metodologia aplicada ao combate</div>
-    <h1>Condicionamento Físico<br/>para o Jiu-Jítsu e Esportes de Combate</h1>
-    <p>
-      Um método voltado para <b>potência, força máxima, estrutura, estabilidade e transferência real</b> para o tatame.
-      Aqui o objetivo é performance: corpo eficiente, resistente e preparado para o imprevisível do combate.
-    </p>
+<header>
+<h1>COMBAT CONDITIONING<br>EVOLUÇÃO REAL</h1>
+</header>
 
-    <div class="cta-row">
-      <a class="btn btn-primary" href="#metodologia">Acessar Metodologia</a>
-      <a class="btn btn-ghost" href="#acesso">Quero Acessar (R$ 59,90)</a>
-    </div>
-  </header>
+<section>
+<h2>Sobre</h2>
+<p>Treinamento focado em performance, força, resistência e evolução no Jiu-Jitsu e esportes de combate.</p>
+</section>
 
-  <nav>
-    <div class="nav-inner">
-      <a href="#metodologia">Metodologia</a>
-      <a href="#beneficios">Benefícios</a>
-      <a href="#acesso">Acesso</a>
-    </div>
-  </nav>
+<section>
+<h2>Galeria</h2>
+<div class="gallery">
+<img src="IMG_0184.webp">
+<img src="IMG_0298.webp">
+<img src="IMG_0299.webp">
+<img src="IMG_0300.webp">
+<img src="IMG_0301.webp">
+</div>
+</section>
 
-  <section id="metodologia">
-    <div class="panel">
-      <h2>Metodologia</h2>
-      <p class="lead">
-        Este método foi estruturado para desenvolver as capacidades determinantes no grappling:
-        <b>produção rápida de força (RFD)</b>, <b>força máxima</b>, <b>rigidez funcional</b>, <b>controle postural</b>,
-        <b>estabilidade sob carga</b> e <b>transferência integrada</b> (pernas → core → tronco → membros superiores).
-        O foco não é “pump” nem estética — é construir um atleta que <b>produz, sustenta e absorve força</b> com eficiência
-        em cenários de instabilidade, contato e alavancas.
-      </p>
+<section>
+<h2>Evolução dos Atletas</h2>
+<div class="card">
+<canvas id="grafico"></canvas>
+</div>
+</section>
 
-      <div class="divider"></div>
-
-      <details>
-        <summary>📅 Planejamento <span class="chev">+</span></summary>
-        <p class="lead" style="margin-top:12px;">
-          O método foi planejado em <b>3 sessões por semana</b>, equilibrando estímulo neuromuscular, recuperação e compatibilidade com o tatame.
-          Os dias abaixo são <b>apenas exemplos</b> (você pode ajustar de acordo com sua agenda).
-        </p>
-        <ul>
-          <li><b>Exemplo 1:</b> Terça – <b>Routine A: Power Push System</b> • Quinta – <b>Routine B: Reactive Pull System</b> • Sábado – <b>Routine C: Maximum Strength & Structural Base</b></li>
-          <li><b>Exemplo 2:</b> Segunda (A) • Quarta (B) • Sexta (C)</li>
-        </ul>
-      </details>
-
-      <details>
-        <summary>🧠 Estrutura & Conceitos <span class="chev">+</span></summary>
-        <ul>
-          <li><b>Routine A — Power Push System:</b> lower-body power + explosive pushing + cervical strength + anti-movement core.</li>
-          <li><b>Routine B — Reactive Pull System:</b> reactive plyometrics + explosive pulling + traps/scapular control + grip system + integrated core.</li>
-          <li><b>Routine C — Maximum Strength & Structural Base:</b> heavy power primer + maximum strength pairs + structural carry/posture.</li>
-        </ul>
-      </details>
-
-      <details>
-        <summary>⚠️ Avisos Importantes <span class="chev">+</span></summary>
-        <ul>
-          <li><b>Aquecimento é obrigatório</b> (preparação articular + ativação neural + padrão de movimento).</li>
-          <li><b>Evite falha</b> como regra — potência e força máxima dependem do SNC.</li>
-          <li><b>Priorize técnica</b> (alinhamento, amplitude útil, escápulas ativas, core estável).</li>
-          <li><b>Respeite descansos</b>: qualidade e intenção explosiva acima de pressa.</li>
-          <li><b>Progressão gradual</b> — sem salto de ego.</li>
-          <li><b>Dor articular</b> não é “normal”. Ajuste carga/técnica.</li>
-        </ul>
-      </details>
-
-      <details>
-        <summary>🎯 Para quem é / Para quem não é <span class="chev">+</span></summary>
-        <p class="small"><b style="color:var(--gold);">✔️ PARA QUEM É</b></p>
-        <ul>
-          <li>Praticantes de jiu-jítsu</li>
-          <li>Atletas de wrestling, judô, grappling e MMA</li>
-          <li>Quem busca performance e não estética</li>
-          <li>Quem quer um corpo funcional, forte e resistente</li>
-          <li>Quem treina no tatame e precisa de base física real</li>
-        </ul>
-
-        <p class="small" style="margin-top:12px;"><b style="color:var(--gold);">❌ PARA QUEM NÃO É</b></p>
-        <ul>
-          <li>Quem busca apenas aparência física</li>
-          <li>Quem não treina esportes de combate</li>
-          <li>Quem procura treinos genéricos de academia</li>
-          <li>Quem ignora progressão, técnica e recuperação</li>
-        </ul>
-      </details>
-
-    </div>
-  </section>
-
-  <section id="beneficios">
-    <div class="panel">
-      <h2>Benefícios</h2>
-      <div class="grid">
-        <div class="card"><strong>Potência aplicada</strong><span>Mais explosão em entradas, quedas, scrambling e pressão.</span></div>
-        <div class="card"><strong>Força máxima</strong><span>Eleva o teto de força e melhora eficiência neural.</span></div>
-        <div class="card"><strong>Estrutura</strong><span>Mais rigidez funcional e tolerância mecânica sob carga.</span></div>
-        <div class="card"><strong>Pegada & tração</strong><span>Mais domínio em puxadas, controle e manipulação.</span></div>
-        <div class="card"><strong>Estabilidade</strong><span>Menos colapso postural sob pressão.</span></div>
-        <div class="card"><strong>Longevidade</strong><span>Mais prevenção de lesões + consistência de treino.</span></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="acesso">
-    <div class="panel">
-      <h2>Acesso ao Método Completo</h2>
-      <p class="lead">
-        Método completo com rotinas A/B/C, guias técnicos e links de vídeos demonstrativos de cada exercício.
-        <b>Valor: R$ 59,90</b>
-      </p>
-
-      <div class="price">
-        <div>
-          <div class="small">Investimento</div>
-          <div class="value">R$ 59,90</div>
-        </div>
-        <a class="btn btn-primary"
-           target="_blank"
-           href="https://wa.me/5565993261402?text=Estou%20interessado,%20quero%20o%20m%C3%A9todo%20completo">
-          Quero Acessar (WhatsApp)
-        </a>
-      </div>
-
-      <p class="small" style="margin-top:14px;">
-        <b style="color:var(--gold);">Pix:</b> 71832697100 • <b>Nubank</b> • <b>Jonathan Adams</b><br/>
-        Após enviar o comprovante no WhatsApp, você recebe o <b>link exclusivo</b> de acesso.
-      </p>
-    </div>
-  </section>
-
-  <footer>
-    © 2026 • Condicionamento Físico para o Jiu-Jítsu e Esportes de Combate • Criado por atleta
-  </footer>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+new Chart(document.getElementById("grafico"),{
+type:"line",
+data:{
+labels:["Mês 1","Mês 2","Mês 3","Mês 4","Mês 5"],
+datasets:[{
+label:"Performance",
+data:[20,40,55,75,95],
+borderColor:"lime",
+backgroundColor:"transparent",
+tension:0.3
+}]
+},
+options:{
+plugins:{legend:{labels:{color:"white"}}},
+scales:{
+x:{ticks:{color:"white"}},
+y:{ticks:{color:"white"}}
+}
+}
+});
+</script>
 
 </body>
 </html>
